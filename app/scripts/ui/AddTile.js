@@ -8,7 +8,7 @@ var Tiles = React.createClass({
 	render: function() {
 	    var createItem = function(item) {
 	      return (
-	        <LinkTile label={item.label} />
+	        <LinkTile label={item.label} image={item.image} />
 	      );
 	  	};
 		return <div className="add-container">{LinkTypes.map(createItem)}</div>

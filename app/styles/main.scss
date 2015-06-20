@@ -45,19 +45,31 @@ body {
 
 a.tile {
     display: block;
+    position: relative;
+    overflow: hidden;
     float: left;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     text-align: center;
-    line-height: 100px;
     border: 1px solid #aaa;
     border-radius: 6px;
-    color: #333;
+    color: #555;
     text-decoration: none;
-    margin: 0 30px 30px 0;
+    margin: 11px;
+    padding: 10px 5px;
+    line-height: 2em;
+    font-size: 12px;
 }
 a.tile:hover {
     background-color: #aaa;
+}
+
+a.tile > .name {
+    padding-top: 16px;
+}
+a.tile > img {
+    width: 64px;
+    height: 64px;
 }
 
 a.tile.add {
@@ -84,6 +96,6 @@ a.tile.add {
 
     /* Space out the masthead */
     .header {
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
 }
