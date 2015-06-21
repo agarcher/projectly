@@ -7,40 +7,25 @@ var React = window.React = require('react'),
 var Tiles = React.createClass({
   getInitialState: function() {
     var items = localStorage.getItem("items");
-    return { items: items ? JSON.parse(items) : [], text: "" };
+    return { items: items ? JSON.parse(items) : [] };
   },
-  onChange: function(e) {
-    this.setState({text: e.target.value});
-  },
-  handleSubmit: function(e) {
-    e.preventDefault();
-    var nextItems = this.state.items.concat([{label: this.state.text}]);
-    var nextText = '';
+  addItem: function(item) {
+    var nextItems = this.state.items.concat([item]);
     localStorage.setItem("items", JSON.stringify(nextItems));
-    this.setState({items: nextItems, text: nextText});
-  },
-  addItem: function(itemText) {
-    var nextItems = this.state.items.concat([{label: itemText}]);
-    var nextText = '';
-    localStorage.setItem("items", JSON.stringify(nextItems));
-    this.setState({items: nextItems, text: nextText});
+    this.setState({ items: nextItems });
   },
   render: function() {
     var createItem = function(item) {
       return (
-        <LinkTile label={item.label} />
+        <LinkTile label={item.label} image={item.image} href={item.url} />
       );
     };
     return (
       <div>
         <div className="link-tiles">
           {this.state.items.map(createItem)}
-          <AddTile parent={this} />
+          <AddTile app={this} />
         </div>
-        <form onSubmit={this.handleSubmit}>
-          <input onChange={this.onChange} value={this.state.text} />
-          <button>{'Add #' + (this.state.items.length + 1)}</button>
-        </form>
 
         <div className="modal fade" id="addModal" tabIndex="-1" role="dialog" aria-labelledby="addModalLabel">
           <div className="modal-dialog" role="document">
