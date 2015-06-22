@@ -14,7 +14,7 @@ $ npm install -g bower
  - Install gulp globally.
 
 ```sh
-$ npm install --global gulp
+$ npm install -g gulp
 ```
 
 ## Usage
@@ -22,5 +22,8 @@ $ npm install --global gulp
 Clone the repo, navigate to it and start the app via:
 
 ```sh
+$ git clone https://github.com/agarcher/projectly.git
+$ cd projectly
+$ npm install
 $ gulp watch
 ```
