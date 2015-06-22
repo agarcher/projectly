@@ -4,14 +4,14 @@ This is a very basic MVP of a project management interface for a project using a
 
 ## Prereqs
 
-1. Install node v10 or greater.
-1. Install bower globally.
+ - Install node v10 or greater.
+ - Install bower globally.
 
 ```sh
 $ npm install -g bower
 ```
 
-1. Install gulp globally.
+ - Install gulp globally.
 
 ```sh
 $ npm install --global gulp
